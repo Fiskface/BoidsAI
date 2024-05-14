@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Flock : MonoBehaviour
@@ -61,5 +62,18 @@ public class Flock : MonoBehaviour
             if (c != agent.AgentCollider) context.Add(c.transform);
         }
         return context;
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Gizmos.color = Color.red;
+        Handles.color = Color.red;
+        foreach(var agent in agents)
+        {
+            //Gizmos.DrawWireSphere(agent.transform.position, neighborRadius);
+            //Gizmos.DrawWireSphere(agent.transform.position, neighborRadius * avoidanceRadiusMultiplier);
+            Handles.DrawWireDisc(agent.transform.position, Vector3.forward, neighborRadius);
+            Handles.DrawWireDisc(agent.transform.position, Vector3.forward, neighborRadius * avoidanceRadiusMultiplier);
+        }
     }
 }
