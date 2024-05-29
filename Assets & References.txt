@@ -1,0 +1,8 @@
+References:
+https://en.wikipedia.org/wiki/Boids
+https://his.instructure.com/courses/7653
+https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d&index=1
+
+
+Assets:
+https://cainos.itch.io/pixel-art-top-down-basic

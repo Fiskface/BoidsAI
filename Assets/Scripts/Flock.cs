@@ -42,11 +42,14 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(var agent in agents)
+        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(mouseWorldPos);
+        foreach (var agent in agents)
         {
             List<Transform> context = GetNearbyObjects(agent);
 
             Vector2 move = behaviour.CalculateMove(agent, context, this);
+            if (Vector2.Distance(agent.transform.position, mouseWorldPos) > 0.1) move += (mouseWorldPos - (Vector2)agent.transform.position).normalized;
             move *= driveFactor;
             if (move.sqrMagnitude > squareMaxSpeed) move = move.normalized * maxSpeed;
             agent.Move(move);
@@ -70,8 +73,6 @@ public class Flock : MonoBehaviour
         Handles.color = Color.red;
         foreach(var agent in agents)
         {
-            //Gizmos.DrawWireSphere(agent.transform.position, neighborRadius);
-            //Gizmos.DrawWireSphere(agent.transform.position, neighborRadius * avoidanceRadiusMultiplier);
             Handles.DrawWireDisc(agent.transform.position, Vector3.forward, neighborRadius);
             Handles.DrawWireDisc(agent.transform.position, Vector3.forward, neighborRadius * avoidanceRadiusMultiplier);
         }
