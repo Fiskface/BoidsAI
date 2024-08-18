@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1658833646003137801}
   - component: {fileID: 5126834228649239922}
   - component: {fileID: 7000947399651075672}
+  - component: {fileID: -4885531812302859857}
   m_Layer: 0
   m_Name: EnemyOne
   m_TagString: Enemy
@@ -137,10 +138,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88e9c1449c0ece42821ac6b43192954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 5
   visionRange: 200
-  alignmentLocalSize: 4
-  alignmentMultiplier: 0.01
-  cohesionLocalSize: 4
-  cohesionMultiplier: 0.02
-  separationLocalSize: 4
-  separationMultiplier: 0.02
+  alignmentViewRange: 3
+  alignmentMultiplier: 1
+  cohesionViewRange: 3
+  cohesionMultiplier: 2
+  separationViewRange: 3
+  separationMultiplier: 2
+  rayCount: 10
+  avoidanceViewRange: 3
+  avoidanceMultiplier: 1
+--- !u!50 &-4885531812302859857
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384258486040973721}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

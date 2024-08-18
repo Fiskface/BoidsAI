@@ -7,6 +7,7 @@ public class EnemyOne : MonoBehaviour
     private Collider2D col;
     private Vector3 move;
     private Vector3 velocity;
+    public float maxSpeed = 5f;
     public int visionRange = 135;
 
     [Header("Alignment")]
@@ -43,8 +44,14 @@ public class EnemyOne : MonoBehaviour
     private void LateUpdate()
     {
         velocity += move;
+
+        if(velocity.magnitude > maxSpeed)
+        {
+            velocity = velocity.normalized * maxSpeed;
+        }
+
         transform.up = velocity;
-        transform.position += velocity;
+        transform.position += velocity * Time.deltaTime;
     }
 
     private Vector3 Align()
