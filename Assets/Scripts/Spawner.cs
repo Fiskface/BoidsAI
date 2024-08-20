@@ -5,19 +5,29 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject spawnThis;
-    public int spawnCount;
 
-    void Start()
+    private float timeBetweenSpawns = 5;
+    private float timer = 0;
+    private int counter = 0;
+
+    void Update()
     {
-        for (int i = 0; i < spawnCount; i++)
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
-            Instantiate(spawnThis, Random.insideUnitCircle * 3, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            for (int i = 0; i < counter; i++)
+            {
+                Spawn();
+            }
+            counter++;
+            timer = timeBetweenSpawns;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Spawn()
     {
-        
+        var a = Random.insideUnitCircle.normalized * 21;
+
+        Instantiate(spawnThis, a, Quaternion.Euler(0, 0, Random.Range(0, 360)));
     }
 }

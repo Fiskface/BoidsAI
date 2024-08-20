@@ -6,4 +6,5 @@ using UnityEngine;
 public class EventBus
 {
     public static Action enemyKilled;
+    public static Action gameOver;
 }

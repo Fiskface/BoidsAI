@@ -139,16 +139,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
-  visionRange: 200
-  alignmentViewRange: 3
+  visionRange: 135
+  layerHit:
+    serializedVersion: 2
+    m_Bits: 8
+  viewRange: 5
   alignmentMultiplier: 1
-  cohesionViewRange: 3
-  cohesionMultiplier: 2
-  separationViewRange: 3
-  separationMultiplier: 2
-  rayCount: 10
-  avoidanceViewRange: 3
-  avoidanceMultiplier: 1
+  cohesionMultiplier: 0.9
+  separationMultiplier: 0.5
+  rayCount: 30
+  avoidanceMultiplier: 0.007
+  moveToPlayerMultiplier: 0.35
+  wandererMultiplier: 0.3
 --- !u!50 &-4885531812302859857
 Rigidbody2D:
   serializedVersion: 4
