@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject spawnThis;
 
-    private float timeBetweenSpawns = 5;
+    private float timeBetweenSpawns = 7;
     private float timer = 0;
     private int counter = 0;
 
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
             }
-            counter++;
+            if(Random.Range(0, 3) < 2) counter++;
             timer = timeBetweenSpawns;
         }
     }

@@ -77,4 +77,9 @@ public class Player : MonoBehaviour
     {
         cooldown *= 0.5f;
     }
+
+    public void GainHealth(int amount)
+    {
+        health += amount;
+    }
 }

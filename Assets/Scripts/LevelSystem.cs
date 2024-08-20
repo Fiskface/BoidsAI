@@ -13,7 +13,7 @@ public class LevelSystem : MonoBehaviour
     public GameObject upgradeMenu;
     public Image xpBar;
     public TextMeshProUGUI scoreText;
-    public int xpToLevelUp = 15;
+    public int xpToLevelUp = 25;
     public int xpIncreasePerLevel = 15;
     private int currentXP = 0;
     private int score = 0;
